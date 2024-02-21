@@ -7,12 +7,20 @@
 
 int main(int argc, char *argv[])
 {
+    (void)argv;
+    (void)argc;
     // initialize the allocator
     mem_init();
     mem_show_heap();
     
-    // char *p = mem_alloc( 42 ); 
-    // assert( p != NULL ); // check whether the allocation was successful
+    for (int i = 0; i < 7; i++)
+    {
+        char *p = mem_alloc1( 20 ); 
+        assert( p != NULL ); // check whether the allocation was successful 
+    }
+    
+
     // printf("allocated 42 bytes at %p\n", p);
-    // mem_show_heap();
+    mem_show_heap();
+    return 0;
 }
